@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "web-server-cluster" {
-  source = "github.com/arnoutc/terraform-modules//web-server-cluster?ref=v0.0.1"
+  source = "github.com/arnoutc/terraform-modules//services/web-server-cluster?ref=v0.0.2"
 
   # (parameters hidden for clarity)
 
