@@ -34,8 +34,8 @@ resource "aws_db_instance" "example" {
     skip_final_snapshot = true
 
     # Retrieve password from AWS Secrets Manager
-    password = data.aws_secretsmanager_secret_version.db_password.secret_string
-    //password = var.db_password #You need to initially use a TFVARS environment variable
+    #password = data.aws_secretsmanager_secret_version.db_password.secret_string
+    password = var.db_password #You need to initially use a TFVARS environment variable
 }
 
 # AWS Secrets Manager leads to error msg: "Error: updating RDS DB Instance (pacator20230130214745025400000001): 
@@ -43,8 +43,8 @@ resource "aws_db_instance" "example" {
 # 1fe40481-8904-426d-8a1c-d95105deba80, api error InvalidParameterValue: The parameter 
 # MasterUserPassword is not a valid password because it is longer than 128 characters."
 
-data "aws_secretsmanager_secret_version" "db_password" {
-  secret_id = "dev_postgres"
+# data "aws_secretsmanager_secret_version" "db_password" {
+#   secret_id = "dev_postgres"
 
-}
+# }
 

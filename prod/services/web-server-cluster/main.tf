@@ -23,9 +23,9 @@ module "web-server-cluster" {
   db_remote_state_key     = var.db_remote_state_key
   region                  = var.region
 
-  instance_type = "t3.micro"
+  instance_type = "m4.large"
   min_size      = 2
-  max_size      = 5
+  max_size      = 10
 }
 
 resource "aws_security_group_rule" "allow_testing_inbound" {
