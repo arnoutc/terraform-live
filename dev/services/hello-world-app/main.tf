@@ -15,7 +15,7 @@ provider "aws" {
 
 module "hello_world_app" {
 
-  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.2"
+  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.3"
 
   server_text = var.server_text
 

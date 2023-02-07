@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.0.0, < 2.0.0"
+  required_version = "= 1.3.7"
 
   required_providers {
     aws = {
@@ -15,7 +15,7 @@ provider "aws" {
 
 module "hello_world_app" {
 
-  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.2"
+  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.3"
 
   server_text = var.server_text
 
