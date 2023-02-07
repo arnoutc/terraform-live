@@ -14,6 +14,7 @@ variable "db_remote_state_key" {
   type          = string
   default       = "dev/data-stores/postgres/terraform.tfstate"
 }
+
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
@@ -21,12 +22,12 @@ variable "db_remote_state_key" {
 
 variable "server_text" {
   description = "The text the web server should return"
-  default     = "Hello, World"
+  default     = "Dev Hello, World"
   type        = string
 }
 
 variable "environment" {
   description = "The name of the environment we're deploying to"
   type        = string
-  default     = "stage"
+  default     = "dev"
 }

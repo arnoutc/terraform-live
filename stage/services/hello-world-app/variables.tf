@@ -1,4 +1,3 @@
-
 # ---------------------------------------------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
@@ -21,14 +20,14 @@ variable "db_remote_state_key" {
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
 
-variable "cluster_name" {
-  description = "The name to use to namespace all the resources in the cluster"
+variable "server_text" {
+  description = "The text the web server should return"
+  default     = "Stage Hello, World"
   type        = string
-  default     = "webservers-stage"
 }
 
-variable "region" {
-    description = "Region used for state file"
-    type = string
-    default = "eu-west-2"
+variable "environment" {
+  description = "The name of the environment we're deploying to"
+  type        = string
+  default     = "stage"
 }
