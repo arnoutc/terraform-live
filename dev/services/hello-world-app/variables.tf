@@ -1,4 +1,3 @@
-
 # ---------------------------------------------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
@@ -15,36 +14,19 @@ variable "db_remote_state_key" {
   type          = string
   default       = "dev/data-stores/postgres/terraform.tfstate"
 }
-
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
 
-variable "cluster_name" {
-  description = "The name to use to namespace all the resources in the cluster"
+variable "server_text" {
+  description = "The text the web server should return"
+  default     = "Hello, World"
   type        = string
-  default     = "webservers-dev"
 }
 
-variable "region" {
-    description = "Region used for state file"
-    type = string
-    default = "eu-west-2"
-}
-
-variable "names" {
-  description = "A list of names"
-  type = list(string)
-  default = ["neo", "trinity", "morpheus"]
-}
-
-variable "hero_thousand_faces" {
-description = "map"
-type = map(string)
-default = {
-neo = "hero"
-trinity = "love interest"
-morpheus = "mentor"
-}
+variable "environment" {
+  description = "The name of the environment we're deploying to"
+  type        = string
+  default     = "stage"
 }

@@ -14,7 +14,10 @@ provider "aws" {
 }
 
 module "web-server-cluster" {
-  source = "github.com/arnoutc/terraform-modules//services/web-server-cluster?ref=v0.0.2"
+  source = "github.com/arnoutc/terraform-modules//services/web-server-cluster?ref=v0.0.7"
+
+  ami = "ami-0d09654d0a20d3ae2" #Redhat Enterprise Linux 9 (64 bit X86)
+  server_text = "Hello, Ubuntu 9 Here for Stage!"
 
   # (parameters hidden for clarity)
 
@@ -26,6 +29,12 @@ module "web-server-cluster" {
   instance_type = "t2.micro"
   min_size      = 2
   max_size      = 2
+  enable_autoscaling = false
+
+  custom_tags = {
+    Owner       = "team-pacator"
+    DeployedBy  = "terraform"
+  }
 }
 
 resource "aws_security_group_rule" "allow_testing_inbound" {
