@@ -13,9 +13,9 @@ provider "aws" {
   region = "eu-west-2"
 }
 
-module "hello_world_app" {
+module "hello-world-app" {
 
-  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.3"
+  source = "github.com/arnoutc/terraform-modules//services/hello-world-app?ref=v0.1.4"
 
   server_text = var.server_text
 
