@@ -1,0 +1,1 @@
+resource "null_resource" "atlantis_example" {}
