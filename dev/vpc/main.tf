@@ -1,1 +1,1 @@
-resource "null_resource" "atlantis_example_2" {}
+resource "null_resource" "atlantis_example_3" {}
