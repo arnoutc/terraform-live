@@ -8,4 +8,4 @@ resource "aws_iam_user" "example" {
     name = each.value
 }
 
-resource "null_resource" "example" {}
+resource "null_resource" "atlantis_example" {}
